@@ -1,8 +1,7 @@
 from django.contrib import admin
-from .models import UserSubmission
+from .models import Submission
 
-@admin.register(UserSubmission)
-class UserSubmissionAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'email', 'phone')
-    search_fields = ('full_name', 'email')
-    ordering = ('full_name',)
+@admin.register(Submission)
+class SubmissionAdmin(admin.ModelAdmin):
+    list_display = ['full_name', 'email']
+    search_fields = ['full_name', 'email']

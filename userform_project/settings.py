@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-oa&s$8v84=2-_@ir(z*!7d3ufqmh_3^#g4@4+lp6-u=e@)%prt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['AlishThapas.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'AlishThapas.pythonanywhere.com']
+
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'submission',
+    'widget_tweaks',  # For custom widget tweaks
 
 ]
 
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'userform_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

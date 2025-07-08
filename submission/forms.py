@@ -1,7 +1,14 @@
+# submission/forms.py
 from django import forms
-from .models import UserSubmission
+from .models import Submission
 
-class UserSubmissionForm(forms.ModelForm):
+class SubmissionForm(forms.ModelForm):
     class Meta:
-        model = UserSubmission
-        fields = '__all__'
+        model = Submission
+        fields = ['image', 'full_name', 'address', 'email', 'phone']
+        widgets = {
+            'full_name': forms.TextInput(attrs={'placeholder': 'Enter your full name'}),
+            'address': forms.Textarea(attrs={'rows': 2, 'placeholder': 'Your address'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Enter your email'}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Optional phone number'}),
+        }
