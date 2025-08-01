@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'AlishThapas.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'submission',
-    'widget_tweaks',  # For custom widget tweaks
+    'widget_tweaks',
+    # For custom widget tweaks
 
 ]
 
@@ -77,14 +79,17 @@ WSGI_APPLICATION = 'userform_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'userform_db',
-    'USER': 'root',
-    'PASSWORD': 'ALISH123.',
-    'HOST': 'localhost',
-    'PORT': '3306',
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'AlishThapas$default',              # Your database name
+        'USER': 'AlishThapas',              # Your MySQL username
+        'PASSWORD': 'ALISH123.', # Replace with your actual MySQL password
+        'HOST': 'AlishThapas.mysql.pythonanywhere-services.com',  # Your MySQL host
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
+    }
 }
 
 
